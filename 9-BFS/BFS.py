@@ -66,7 +66,7 @@ if __name__ == "__main__":
     accumEndNodeFound=sc.accumulator(0)
     startNode=2
     endNode=3
-    rd=sc.textFile("file:///E:/Devesh/Projects/SparkProject/9-BFS/inp1.txt").map(parseGraph)
+    rd=sc.textFile("file:///E:/Devesh/Projects/SparkProject/Spark-Projects/9-BFS/inp1.txt").map(parseGraph)
     totalNode=rd.count()
     for i in range(totalNode+1):
         rd=rd.flatMap(exploreNeighbour).reduceByKey(merge)
